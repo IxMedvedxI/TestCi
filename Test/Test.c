@@ -71,14 +71,14 @@ int f3(char* name) {
     return count;
 }
 int f7(char* name) {
-    FILE* file,otv;
+    FILE* file;
+    FILE* otv;
     char str[1000];
     int count = 0;
-    fopen_s(&file, name, "r");
-    fopen_s(&otv, "otvet.txt", "w");
-    while (fscanf("%s", str, 1000) != NULL) {
-        printf("%s\n", str);
-        fprintf("%s", str);
+    file = fopen( name, "r");
+    otv = fopen("otvet.txt", "w");
+    while (fscanf(file,"%s", str) != EOF) {
+        fprintf(otv,"%s ", str);
     }
     return count;
 }
