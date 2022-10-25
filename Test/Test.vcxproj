@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="text.txt" />
+    <Text Include="otvet.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="comp.h" />

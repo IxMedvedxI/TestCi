@@ -1,4 +1,4 @@
-﻿
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <time.h>
 #include <conio.h>
@@ -43,6 +43,17 @@ int f2(char* str) {
     }
     return x;
 }
+
+void f5(char* str) {
+    char ch;
+    int len = strlen(str);
+    for (int i = 0; i < (len / 2); i++) {
+        ch = str[i];
+        str[i] = str[len - i];
+        str[len - i] = ch;
+    }
+}
+
 int f3(char* name) {
     FILE* file;
     char str[1000];
@@ -59,16 +70,29 @@ int f3(char* name) {
     }
     return count;
 }
+int f7(char* name) {
+    FILE* file,otv;
+    char str[1000];
+    int count = 0;
+    fopen_s(&file, name, "r");
+    fopen_s(&otv, "otvet.txt", "w");
+    while (fscanf("%s", str, 1000) != NULL) {
+        printf("%s\n", str);
+        fprintf("%s", str);
+    }
+    return count;
+}
 
 int main()
 {
-    char name[100];
+    /*char name[100];
     char str[100];
     printf("input name file: ");
     scanf_s("%s", name,100);
     printf("input number: ");
-    scanf_s("%s", str,100);
-    Comp* ch;
+    scanf_s("%s", str,100);*/
+    f7("text.txt");
+    /*Comp* ch;
     Comp* ch1;
     Comp* ch2;
     ch = create(1, 5);
@@ -88,6 +112,6 @@ int main()
     printf("\n");
     ch2 = del(ch, ch1);
     printC(ch2);
-    printf("\n");
+    printf("\n");*/
 }
 
